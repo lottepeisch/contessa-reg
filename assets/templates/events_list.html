@@ -1,0 +1,49 @@
+<div class="page-header">
+    <img src="assets/images/all_events.png">
+</div>
+
+<div ng-show="false">
+    <div class="jumbotron">
+        {{schedule.length}}
+        <h2>No events to show, yet! Come back again soon!</h2>
+    </div>
+</div>
+
+<div ng-show="true">
+    <div class="input-group">
+        <span class="input-group-addon">Filter Events</span></span>
+        <input type="text" class="form-control" placeholder="Filter on anything!" ng-model="searchText">
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="events-column col-sm-5 col-md-3" ng-repeat="event in events | filter:searchText | orderBy: 'start_time'" ng-show="event.item" ng-init="event.image_url = getImage(event.item.image_url,event.item.created_at)">
+            <div class="thumbnail">
+
+                <div class="event-image">
+                    <div class="event-holder"></div>
+                    <div class="event-type-text"><a href="{{tkurl}}/campaign/{{event.item.id}}/about" target="_blank">
+                        <span ng-show="event.item_type == 'EventCampaign'">Game</span><span ng-show="event.item_type == 'EventPanel'">Panel</span> - {{localTimeDate(event.item.next_game_at) | date:'EEEE @ha'}}</a></div>
+                    <div ng-show="event.item_type != 'EventPanel'"><a href="{{tkurl}}/campaign/{{event.item.id}}/about" target="_blank"><img ng-src="{{event.image_url}}"></a></div>
+                    <div ng-show="event.item_type == 'EventPanel'"><a href="{{tkurl}}/panel/{{event.item.id}}/about" target="_blank"><img ng-src="{{event.image_url}}"></a></div>
+                </div>
+                <div class="event-labels">
+                    <div class="player-text">
+                        <span ng-show="event.item_type != 'EventPanel'"><i class="fa fa-group"></i> {{event.current_users}} / <span ng-show="event.max_users == null">-</span>{{event.max_users}} Players</span>
+                        <span ng-show="event.item_type == 'EventPanel'"><i class="fa fa-eye"></i> Panel - View Online</span>
+                    </div>
+                    <div ng-show="event.item_type != 'EventPanel'" class="pull-right"><span ng-show="event.item.maturity_rating_text"  class="label label-primary">{{event.item.maturity_rating_text}}</span></div>
+                </div>
+                <div class="caption">
+                    <div ng-show="event.item_type != 'EventPanel'"><h4 class="title"><a href="{{tkurl}}/campaign/{{event.item.id}}/about" target="_blank">{{event.item.name}}</a></h4></div>
+                    <div ng-show="event.item_type == 'EventPanel'"><h4 class="title"><a href="{{tkurl}}/panel/{{event.item.id}}/about" target="_blank">{{event.item.name}}</a></h4></div>
+                    <p><strong>{{localTimeDate(event.start_at) | date:'EEEE MM/dd @ ha'}} for {{event.item.game_length / (1000*60*60) %24 }} hrs</strong></p>
+                    <p class="short-desc"><small>{{event.short_desc}}</small></p>
+                    <div ng-show="event.item_type != 'EventPanel'"><a href="{{tkurl}}/campaign/{{event.item.id}}/join" target="_blank" class="btn btn-primary" role="button">Join Game</a></div>
+                    <div ng-show="event.item_type == 'EventPanel'"><a href="{{tkurl}}/campaign/{{event.item.id}}" target="_blank" class="btn btn-primary" role="button">Remind Me</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

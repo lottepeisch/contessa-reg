@@ -1,0 +1,97 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Register An Event</h4>
+          All fields are required. Give us your best 'elevator' pitch for your event, and we'll get you set up with our partner site, <a href="http://tavern-keeper.com" target="_blank">Tavern Keeper</a>, to fill out the details.
+      </div>
+        <form role="form" name="form">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" ng-model="data.event.user_email" required>
+            </div>
+            <div class="form-group">
+                <label for="event-type">Event Type</label>
+                <select name="event-type" id="event-type" class="form-control" ng-model="data.event.event_type" required>
+                    <option>Game</option>
+                    <option>Panel</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="event-day">Event Date, Time, and Duration (In Your Timezone)</label>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <select name="event-day" id="event-day" class="form-control" ng-model="data.event.day" required>
+                            <option value="2014-02-07">Friday, Feb 7th</option>
+                            <option value="2014-02-08">Saturday, Feb 8th</option>
+                            <option value="2014-02-09">Sunday, Feb 9th</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3">
+                        <select name="event-hour" id="event-hour" class="form-control" ng-model="data.event.hour" required>
+                            <option value="00:00">12:00 AM</option>
+                            <option value="01:00">01:00 AM</option>
+                            <option value="02:00">02:00 AM</option>
+                            <option value="03:00">03:00 AM</option>
+                            <option value="04:00">04:00 AM</option>
+                            <option value="05:00">05:00 AM</option>
+                            <option value="06:00">06:00 AM</option>
+                            <option value="07:00">07:00 AM</option>
+                            <option value="08:00">08:00 AM</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">01:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                            <option value="18:00">06:00 PM</option>
+                            <option value="19:00">07:00 PM</option>
+                            <option value="20:00">08:00 PM</option>
+                            <option value="21:00">09:00 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                            <option value="23:00">11:00 PM</option>
+                        </select>   
+                    </div>
+                    <div class="col-xs-4">
+                        <select name="event-duration" id="event-duration" class="form-control" ng-model="data.event.duration" required>
+                            <option value="3600000">1 Hour</option>
+                            <option value="7200000">2 Hours</option>
+                            <option value="10800000">3 Hours</option>
+                            <option value="14400000">4 Hours</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="title">Event Title</label>
+                <input name="title" id="title" type="text" class="form-control" ng-model="data.event.name" placeholder="D&D Among the Stars" required>
+            </div>
+            <div class="form-group">
+                <label for="short-desc">Event Description:</label>
+                <textarea name="short-desc" id="short-desc" class="form-control" rows="3" ng-model="data.event.short_desc" placeholder="A game of Dungeons & Dragons set in space!" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" ng-model="data.shecheck" required>
+                    I verify that I identify as 'she'.
+                </label>
+                <label>
+                    <input type="checkbox" ng-model="data.policycheck" required>
+                    I have read and agree to ConTessa's <a href="http://contessaonline.com/rules-of-conduct/" target="_blank">rules</a> and <a href="http://contessaonline.com/faqs/what-does-apolitical-mean-to-contessa/" target="_blank">apolitical</a> nature.
+                </label>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <input type="submit" class="btn btn-primary" data-dismiss="modal" ng-disabled="form.$invalid" ng-click="submitEvent(data)" value="Submit Event for Review">
+      </div>
+    </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

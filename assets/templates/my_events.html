@@ -1,0 +1,66 @@
+<div id="schedule_main">
+    <div class="page-header">
+        <img src="assets/images/my_schedule.png">
+    </div>
+
+    <div ng-show="!gplus.signed_in" class="myschedule_loggedout">
+        <div class="alert alert-info">
+            <H2>Log in through Google+ to See Your Scheduled Events</H2>
+            <div class="center-block">
+              <span id="signinButtonSched">
+                    <span
+                            class="g-signin"
+                            data-callback="signinCallback"
+                            data-clientid="513127794899.apps.googleusercontent.com"
+                            data-cookiepolicy="single_host_origin"
+                            data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                            data-scope="https://www.googleapis.com/auth/plus.login"
+                            data-theme="light"
+                            data-width="wide">
+                  </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="jumbotron" ng-show="gplus.signed_in">
+            {{schedule.length}}
+            <h2>You haven't signed up for anything yet!</h2>
+        </div>
+    </div>
+
+    <!--<div ng-show="gplus.signed_in">-->
+    <div ng-show="false">
+        <div class="input-group">
+            <span class="input-group-addon">Filter Events</span></span>
+            <input type="text" class="form-control" placeholder="Filter on anything!" ng-model="searchSched">
+        </div>
+
+        <p>
+            <table class="my-events table table-bordered table-hover">
+                <th>Event Title</th>
+                <th>My Role</th>
+                <th>Players</th>
+                <th>Time and Date</th>
+                <tr  ng-repeat="item in schedule | filter:searchSched | orderBy: 'start_time'">
+                    <td>
+                        <a href="#">{{item.name}}</a>
+                    </td>
+                    <td>
+                        <span ng-show="item.item_type != 'Panel'"><i class="fa fa-group"></i> Player</span>
+                        <span ng-show="item.item_type == 'Panel'"><i class="fa fa-eye"></i> Viewer</span>
+                    </td>
+                    <td>
+                        <span ng-show="item.item_type != 'Panel'">{{item.current_users}} / {{item.max_users}}</span>
+                        <span ng-show="item.item_type == 'Panel'">N/A (Panel)</span>
+                    </td>
+                    <td>
+                        {{localTimeDate(item.start_at) | date:'EEEE MM/dd @ ha'}} for {{item.duration / 60 }} hrs
+                    </td>
+                </tr>
+            </table>
+        </p>
+
+    </div>
+</div>

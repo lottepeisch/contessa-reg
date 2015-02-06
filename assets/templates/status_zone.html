@@ -1,0 +1,6 @@
+<!--On Successful event submission -->
+<div ng-include src="'assets/templates/messages/event_success.html'" ng-show="status.template == 'event_success'"></div>
+
+<!-- Mostly for unexpected errors, or things we don't want to message specially. -->
+<div ng-include src="'assets/templates/messages/generic.html'" ng-show="status.template == 'generic'"></div>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="regMonster">
+<head>
+	<meta charset="utf-8">
+	<title>ConTessa Registration Portal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.js"></script>
+
+	<!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="assets/css/styles.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/libs/html5shiv.js"></script>
+      <script src="assets/js/libs/respond.min.js"></script>
+    <![endif]-->
+</head>
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+
+<body ng-controller="MainCtrl" id="main">
+
+    <div ng-include src="'assets/templates/navbar.html'"></div>
+
+    <div class="container" ng-controller="NewEventsCtrl" id="new_event">
+        <div ng-include src="'assets/templates/new_event.html'"></div>
+    </div>
+
+    <div class="container status-zone" ng-controller="StatusZoneCtrl">
+        <div ng-include src="'assets/templates/status_zone.html'"></div>
+    </div>
+
+    <div class="container">
+  		<div ng-view>
+  		</div>	
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/libs/bootstrap.min.js"></script>
+    <script src="assets/js/libs/moment.min.js"> </script>
+    <script src="assets/js/models.js"> </script>
+    <script src="assets/js/app.js"> </script>
+    <script src="assets/js/controllers.js"> </script>
+    <script src="assets/js/directives.js"> </script>
+    <script src="assets/js/filters.js"> </script>
+    <script src="assets/js/services.js"> </script>
+
+</body>
+
+</html>

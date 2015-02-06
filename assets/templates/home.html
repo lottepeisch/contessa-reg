@@ -1,0 +1,46 @@
+<div class="jumbotron">
+    <p class="logo"><img src="assets/images/reg_central.png"></p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="#/events"><i class="fa fa-calendar"></i> View All Events</a>
+                    <p><small>View and interact with all the events available at the convention.</small></p>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-md-4">-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-body">-->
+                    <!--<a href="#/schedule"><i class="fa fa-tasks"></i> My Schedule</a>-->
+                    <!--<p><small>Use your G+ login to view how your ConTessa schedule is shaping up.</small></p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div ng-show="!gplus.signed_in">
+                        <span id="signinButtonHome">
+                            <span
+                                    class="g-signin"
+                                    data-callback="signinCallback"
+                                    data-clientid="513127794899.apps.googleusercontent.com"
+                                    data-cookiepolicy="single_host_origin"
+                                    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                                    data-scope="https://www.googleapis.com/auth/plus.login"
+                                    data-theme="light"
+                                    data-width="wide">
+                          </span>
+                        </span>
+                    </div>
+                    <div ng-show="gplus.signed_in">
+                        <a data-toggle="modal" data-target="#myModal" id="registerGPlusHome" href="#"><i class="fa fa-pencil-square-o"></i> Register a New Event</a>
+                    </div>
+                    <p><small>Sign in using your G+ login to register a new event.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

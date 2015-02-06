@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="assets/images/reg_central_menu.png"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="https://www.tavern-keeper.com/event/1"><i class="fa fa-calendar"></i> All Events</a></li>
+                <!--<li><a href="#/schedule"><i class="fa fa-tasks"></i> My Schedule</a></li>-->
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://www.contessaonline.com/about" target="_blank">About ConTessa</a></li>
+                        <li><a href="http://contessaonline.com/faqs/" target="_blank">Convention FAQs</a></li>
+                        <li><a href="mailto:admin@contessaonline.com">Contact Us</a></li>
+                        <li><a id="revokeButton" ng-click="revokeGPlus()">Sign Out</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://www.contessaonline.com" target="_blank"><i class="fa fa-heart"></i> The ConTessa Blog</a></li>
+            </ul>
+            <form class="nav navbar-form navbar-right">
+                <div ng-show="!gplus.signed_in">
+                     <span id="signinButton">
+                        <span
+                                class="g-signin"
+                                data-callback="signinCallback"
+                                data-clientid="513127794899.apps.googleusercontent.com"
+                                data-cookiepolicy="single_host_origin"
+                                data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                                data-scope="https://www.googleapis.com/auth/plus.login"
+                                data-theme="light"
+                                data-width="wide">
+                      </span>
+                    </span>
+                </div>
+                <div class="signin-toggle" ng-show="gplus.signed_in">
+                    <button id="neweventButton" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+                        Create an Event
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>

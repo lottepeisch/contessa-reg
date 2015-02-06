@@ -1,0 +1,194 @@
+body {
+	padding-top: 60px;
+}
+
+h4 {
+    font-size: 17px;
+}
+
+.signin-toggle {
+	text-align: center;
+}
+
+#neweventbutton {
+	display: none;
+}
+
+.event-image {
+    max-width: 300px;
+    height: 200px;
+    text-align: center;
+    overflow: hidden;
+    background-color: black;
+}
+
+.event-image img {
+    height: 200px;
+    position: relative;
+    top: -30px;
+}
+
+.event-day,
+.event-type {
+    color: white;
+    text-align: left;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    font-size: 18px;
+    padding: 5px;
+}
+
+.event-day {
+    top: 30px;
+}
+
+.event-holder {
+    position: relative;
+    background-color: black;
+    height: 30px;
+    z-index: 4;
+    opacity: 0.5;
+}
+
+.event-type {
+    height: 30px;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 200px;
+}
+
+.event-type-text {
+    font-size: 18px;
+    opacity: 1;
+    position: absolute;
+    top: 7px;
+    left: 30px;
+    z-index: 4;
+    color: white;
+}
+
+.event-type-text a {
+    color: white;
+}
+
+a.event-day {
+    color: white;
+}
+
+.events-column {
+    margin-bottom: 25px;
+}
+
+.short-desc {
+    overflow: hidden;
+    height: 100px;
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 36px;
+}
+
+#signinButton {
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+
+form.nav {
+    position: relative;
+    top: 6px;
+}
+
+.pseudolink {
+    cursor: pointer;
+}
+
+.nav-align-bottom {
+    position: relative;
+    bottom: -12px;
+    right: 0px;
+}
+
+.main-header {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.navbar-brand {
+    padding: 7px 15px 7px 0;
+    margin-left: 0px;
+}
+
+.navbar>.container .navbar-brand {
+    margin-left: 0px;
+}
+
+.navbar-form,
+.navbar-nav {
+    margin-top: 7px;
+}
+
+.navbar-right {
+    padding-right: 0px;
+}
+
+.navbar-nav a {
+    font-size: 16px;
+}
+
+.navbar-nav>li>a {
+     padding-top: 23px;
+     padding-bottom: 7px;
+ }
+
+.jumbotron {
+    margin-top: 20px;
+}
+
+.jumbotron .logo {
+    text-align: center;
+}
+
+.gplus-signin-button {
+    width: 180px;
+}
+
+.center-block {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+#signinButtonHome {
+    line-height: 30px;
+}
+
+.myschedule_loggedout h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.myschedule_loggedout button {
+    margin: 0 auto;
+}
+
+.event-labels {
+    padding: 2px 5px 0 5px;
+    background-color: black;
+    height: 27px;
+    color: #c0c0c0;
+}
+
+.player-text {
+    position: relative;
+    top: 2px;
+    display: inline;
+}
+
+.status-zone {
+    margin-top: 20px;
+}
